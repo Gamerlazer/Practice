@@ -67,18 +67,17 @@
 // sumDigits(49) → 13
 // sumDigits(12) → 3
 
-var recursiveSum = function(n){
-	n = ""+n
-	if (n.length === 1) {
-		return Number(n)
-	}
-	return Number(n[0]) + Number(recursiveSum(n.slice(1)));
-};
+// var recursiveSum = function(n){
+// 	n = ""+n
+// 	if (n.length === 1) {
+// 		return Number(n)
+// 	}
+// 	return Number(n[0]) + Number(recursiveSum(n.slice(1)));
+// };
 
-// console.log(""+142)
-console.log(recursiveSum(126))
-console.log(recursiveSum(49))
-console.log(recursiveSum(12))
+// console.log(recursiveSum(126))
+// console.log(recursiveSum(49))
+// console.log(recursiveSum(12))
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -90,8 +89,16 @@ console.log(recursiveSum(12))
 // PowerOfTwo(9) -> false
 
 var isPowerOfTwo = function(n){
-
+	if (n === 0) {
+		return true;
+	} else if (n === 1) {
+		return false
+	}
+	return isPowerOfTwo(n-2);
 };
+
+console.log(isPowerOfTwo(8))
+console.log(isPowerOfTwo(9))
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
