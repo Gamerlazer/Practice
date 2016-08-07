@@ -41,21 +41,21 @@
 // };
 
 /* SOLUTION #2 */
-var countVowels = function(str){
-	var vowels = ['a', 'e', 'i', 'o', 'u'];
-	var count = 0;
+// var countVowels = function(str){
+// 	var vowels = ['a', 'e', 'i', 'o', 'u'];
+// 	var count = 0;
 
-	if (vowels.indexOf(str[0]) !== -1) {
-		count = 1;
-	} 
-	if (str === '') {
-		return count;
-	} 
-	return count + countVowels(str.slice(1));
+// 	if (vowels.indexOf(str[0]) !== -1) {
+// 		count = 1;
+// 	} 
+// 	if (str === '') {
+// 		return count;
+// 	} 
+// 	return count + countVowels(str.slice(1));
 
-};
+// };
 
-console.log(countVowels('abcedfgee'));
+// console.log(countVowels('abcedfgee'));
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -68,8 +68,17 @@ console.log(countVowels('abcedfgee'));
 // sumDigits(12) → 3
 
 var recursiveSum = function(n){
-	return recusiveSum()
+	n = ""+n
+	if (n.length === 1) {
+		return Number(n)
+	}
+	return Number(n[0]) + Number(recursiveSum(n.slice(1)));
 };
+
+// console.log(""+142)
+console.log(recursiveSum(126))
+console.log(recursiveSum(49))
+console.log(recursiveSum(12))
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
